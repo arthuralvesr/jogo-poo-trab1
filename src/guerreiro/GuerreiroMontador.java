@@ -1,6 +1,7 @@
 package guerreiro;
 
-public class GuerreiroMontador extends Guerreiro {
+public abstract class GuerreiroMontador extends Guerreiro {
+    
     protected Guerreiro montaria;
 
     public GuerreiroMontador(String nome, int idade, double peso, int ataque) {
@@ -16,7 +17,4 @@ public class GuerreiroMontador extends Guerreiro {
         this.montaria = montaria;
     }
      
-    
-    
-    
 }

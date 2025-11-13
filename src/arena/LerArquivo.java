@@ -139,10 +139,11 @@ public class LerArquivo {
                         guerreiro = new Guardiao(nome, idade, peso, montariaGuerreiro);
                         break;
                     case 2: 
-                        guerreiro = new Arqueiro(nome, idade, peso);
+                        guerreiro = new Arqueiro(nome, idade, peso, montariaGuerreiro);
                         break;
                     case 3:
-                        guerreiro = new Superior(nome, idade, peso);
+                        guerreiro = new Superior(nome, idade, peso, montariaGuerreiro);
+                        
                         break;
                     case 4:
                         guerreiro = new Glutao(nome, idade, peso, montariaGuerreiro);

@@ -4,10 +4,10 @@ import guerreiro.Guerreiro;
 import guerreiro.GuerreiroMontador;
 import java.util.LinkedList;
 
-public class Arqueiro extends GuerreiroMontador {
+public class Arqueiro extends Elfos {
 
-    public Arqueiro(String nome, int idade, double peso) {
-        super(nome, idade, peso, 5);
+    public Arqueiro(String nome, int idade, double peso, Guerreiro montaria) {
+        super(nome, idade, peso, 5, montaria);
     }
 
     @Override
