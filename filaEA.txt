@@ -1,0 +1,2 @@
+6 Imperador 15 80
+1 Guardiao 21 21

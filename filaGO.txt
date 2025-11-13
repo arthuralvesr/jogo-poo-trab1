@@ -1,0 +1,7 @@
+3 Soldado 23 73 Sim
+1 Goblin 23 23
+1 Goblin 23 23
+1 Goblin 23 23
+1 Goblin 23 23
+2 Goblin 23 23
+2 Goblin 23 23
