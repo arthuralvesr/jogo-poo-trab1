@@ -18,7 +18,21 @@ public class Arqueiro extends Elfos {
             LinkedList<Guerreiro> resultadoDoDefensor = g.reduzirEnergia(this.ataque, mortosDefesa, ataque, defesa); 
             
             addFila.addAll(resultadoDoDefensor);
+            
+            System.out.println("Atacante: " + this.nome + " atingiu " + g.getNome() + " com " + this.ataque + " | energia final " + g.getEnergia());
+            
+            if (g instanceof GuerreiroMontador) {
+                GuerreiroMontador gm = null;
+                
+                if (gm != null) {
+                    System.out.println("Montaria: " + gm.getMontaria().getNome() + " vida: " + gm.getMontaria().getEnergia());
+                }
+            }
         }
+        
+        System.out.println("");
+        
+        
         
         return addFila;
     }

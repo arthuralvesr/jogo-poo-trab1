@@ -97,7 +97,11 @@ public class Arena {
         
         // dado do ultimo membro do lado perdedor e dados do ultimo ataque do lado vencedor
         System.out.println();
-        dadosUltimos(filaGO, filaEA, filaMortosGO, filaMortosEA);
+        
+        exibirDados(filaGO);
+        exibirDados(filaEA);
+        
+        dadosUltimos(filaGO, filaEA, filaMortosGO, filaMortosEA);;
     }
 
     private void exibirDados(LinkedList <Guerreiro> fila){
@@ -192,9 +196,9 @@ public class Arena {
     
     private void ladoVencedor(LinkedList<Guerreiro> filaGO, LinkedList <Guerreiro> filaEA) {
 
-        if(filaEA.isEmpty()) {
+        if(filaEA.isEmpty() && !filaGO.isEmpty()) {
             System.out.println("\tGoblins e Orcs venceram");
-        } else if (filaGO.isEmpty() ) {
+        } else if (filaGO.isEmpty() && !filaEA.isEmpty() ) {
             System.out.println("\tElfos e anoes venceram");
         } else {
             System.out.println("\tEmpate");
@@ -203,7 +207,7 @@ public class Arena {
     
     private void dadosUltimos(LinkedList<Guerreiro> filaGO, LinkedList <Guerreiro> filaEA, LinkedList<Guerreiro> filaMortosGO, LinkedList <Guerreiro> filaMortosEA){
         
-        if(filaEA.isEmpty()) {
+        if(filaEA.isEmpty() && !filaGO.isEmpty()) {
             Guerreiro ultimoPerdedor = filaMortosEA.getLast();
             Guerreiro ultimoVencedor = filaGO.getLast();
             
@@ -213,7 +217,7 @@ public class Arena {
             System.out.println("f)");
             System.out.println("\tO " + ultimoVencedor.getClass().getSimpleName() + " " + ultimoVencedor.getNome() + " de " + ultimoVencedor.getIdade() + " anos e " + ultimoVencedor.getPeso() + " kilos transferiu o ultimo ataque no " + ultimoPerdedor.getClass().getSimpleName() + " " + ultimoPerdedor.getNome() + " de " + ultimoPerdedor.getIdade() + " anos e " + ultimoPerdedor.getPeso() + " kilos");
             
-        } else if (filaGO.isEmpty() ) {
+        } else if (filaGO.isEmpty() && !filaEA.isEmpty() ) {
             Guerreiro ultimoPerdedor = filaMortosGO.getLast();
             Guerreiro ultimoVencedor = filaEA.getLast();
             

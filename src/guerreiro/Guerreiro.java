@@ -27,6 +27,10 @@ public abstract class Guerreiro {
         this.envenenado = 0;
     }
 
+    public void setEnvenenado(int envenenado) {
+        this.envenenado = envenenado;
+    }
+
     public int getEnvenenado() {
         return envenenado;
     }
@@ -92,18 +96,27 @@ public abstract class Guerreiro {
         
         LinkedList<Guerreiro> addFila = new LinkedList<>();
         
-        if (defensor.getEnvenenado() < 0) {
-            defensor.setEnergia(5 * defensor.getEnvenenado());
+        if (this.getEnvenenado() > 0) {
+            this.reduzirEnergia((5 * this.getEnvenenado()), mortosDefesa, ataque, defesa);
+           
         }
         
         if(!defensor.isMorto()) {
             addFila.addAll(defensor.reduzirEnergia(this.ataque, mortosDefesa, ataque, defesa)); 
             
-        }
+        }        
         
-        /*
-        System.out.println("Atacante: " + this.nome + " atingiu " + defensor.getNome() + " com " + this.ataque + " | energia final " + defensor.getEnergia());
-        System.out.println(); */
+        System.out.println("Atacante: " + this.nome + " atingiu " + defensor.getNome() + " com " + this.ataque + " " + this.energia + " | energia final " + defensor.getEnergia());
+        
+        System.out.println(); 
+        
+        
+        if (defensor instanceof GuerreiroMontador) {
+            GuerreiroMontador g = null;
+            if (g != null) {
+                System.out.println("Montaria: " + g.getMontaria().getNome() + " vida: " + g.getMontaria().getEnergia());
+            }
+        } 
         
         return addFila;
     }

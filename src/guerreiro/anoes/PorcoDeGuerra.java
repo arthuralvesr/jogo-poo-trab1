@@ -12,15 +12,15 @@ public class PorcoDeGuerra extends Guerreiro {
     
     @Override
     public LinkedList<Guerreiro> atacar(LinkedList<Guerreiro> ataque, LinkedList<Guerreiro> defesa, LinkedList<Guerreiro> mortosDefesa, boolean primeiro) {
-        return null;
+        return new LinkedList<>();
     }
     
     @Override
     public LinkedList<Guerreiro> reduzirEnergia(int danoAtaque, LinkedList<Guerreiro> mortosDefesa, LinkedList<Guerreiro> ataque, LinkedList <Guerreiro> defesa) {
-        
-        if(this.getEnvenenado() > 3) {
-        } else {
-           this.envenenado++; 
+        Guerreiro atacante = ataque.getFirst();
+                
+        if(atacante.getEnvenenado() < 3) {
+           atacante.setEnvenenado(atacante.getEnvenenado() + 1); 
         }
        
         LinkedList<Guerreiro> addFila = super.reduzirEnergia(danoAtaque, mortosDefesa, ataque, defesa);
